@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -22,64 +22,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     box-sizing:border-box;
 }
 
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#111;
+    overflow-x:hidden;
+}
+
 html{
     scroll-behavior:smooth;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#050505;
-    color:white;
-    overflow-x:hidden;
-    position:relative;
+a{
+    text-decoration:none;
 }
 
-/* FLOATING GLOW EFFECTS */
-
-body::before{
-    content:'';
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle,
-    rgba(212,175,55,0.18),
-    transparent 70%);
-    top:-180px;
-    right:-120px;
-    z-index:-1;
-}
-
-body::after{
-    content:'';
-    position:fixed;
-    width:450px;
-    height:450px;
-    background:radial-gradient(circle,
-    rgba(255,255,255,0.05),
-    transparent 70%);
-    bottom:-180px;
-    left:-120px;
-    z-index:-1;
-}
-
-.glow{
-    position:absolute;
-    width:300px;
-    height:300px;
-    background:rgba(212,175,55,0.08);
-    filter:blur(120px);
-    border-radius:50%;
-    z-index:-1;
-}
-
-.glow1{
-    top:20%;
-    left:-100px;
-}
-
-.glow2{
-    top:60%;
-    right:-100px;
+img{
+    width:100%;
+    display:block;
 }
 
 /* NAVBAR */
@@ -90,183 +50,173 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     position:fixed;
     top:0;
-    z-index:999;
-    backdrop-filter:blur(18px);
-    background:rgba(8,8,8,0.65);
-    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:1000;
+
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid #eeeeee;
 }
 
 .logo{
-    font-size:32px;
-    font-weight:800;
-    letter-spacing:5px;
-    color:#d4af37;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:3px;
+    color:#148043;
 }
 
 .nav-icons{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:12px;
 }
 
 .icon-btn{
-    width:48px;
-    height:48px;
+    width:44px;
+    height:44px;
+
     border-radius:50%;
-    border:1px solid rgba(255,255,255,0.08);
-    background:rgba(255,255,255,0.04);
-    color:white;
-    font-size:17px;
-    cursor:pointer;
-    transition:0.4s ease;
-    backdrop-filter:blur(15px);
+
+    border:1px solid #e9e9e9;
+
+    background:#fff;
+
+    color:#111;
+
+    font-size:16px;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
-    box-shadow:
-    0 8px 30px rgba(0,0,0,0.45),
-    inset 0 0 0 rgba(255,255,255,0.04);
+    cursor:pointer;
+    transition:0.3s ease;
 }
 
 .icon-btn:hover{
-    transform:translateY(-4px) scale(1.05);
-
-    background:linear-gradient(
-    135deg,
-    #d4af37,
-    #f3d06d
-    );
-
-    color:black;
-
-    box-shadow:
-    0 15px 35px rgba(212,175,55,0.35);
+    background:#148043;
+    color:#fff;
+    border-color:#148043;
 }
 
 /* HERO */
 
 .hero{
     min-height:100vh;
-    padding:150px 7% 100px;
 
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
+
+    padding:140px 7% 90px;
+
+    background:#fff;
 }
 
 .hero-content{
-    max-width:850px;
+    max-width:760px;
 }
 
 .tag{
     display:inline-block;
-    padding:12px 22px;
+
+    padding:10px 18px;
+
+    background:#edf8f1;
+
+    color:#148043;
+
     border-radius:50px;
 
-    background:rgba(212,175,55,0.12);
-
-    border:1px solid rgba(212,175,55,0.35);
-
-    color:#d4af37;
-
     font-size:14px;
-    margin-bottom:30px;
 
-    backdrop-filter:blur(10px);
+    margin-bottom:25px;
+
+    font-weight:500;
 }
 
 .hero h1{
-    font-size:72px;
-    line-height:1.05;
-    margin-bottom:25px;
-    font-weight:800;
+    font-size:64px;
+    line-height:1.1;
 
-    background:linear-gradient(
-    to right,
-    #ffffff,
-    #d4af37
-    );
+    margin-bottom:22px;
 
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    font-weight:700;
+
+    color:#111;
 }
 
 .hero p{
-    color:#bcbcbc;
-    line-height:1.9;
     font-size:17px;
-    max-width:700px;
-    margin:auto;
-    margin-bottom:40px;
-}
+    line-height:1.8;
 
-/* BUTTONS */
+    color:#666;
+
+    margin-bottom:35px;
+}
 
 .hero-buttons{
     display:flex;
     justify-content:center;
-    gap:18px;
+    gap:16px;
     flex-wrap:wrap;
 }
 
 .btn{
-    padding:16px 32px;
+    padding:15px 30px;
+
+    border-radius:50px;
+
     border:none;
-    border-radius:60px;
 
     font-size:15px;
     font-weight:600;
 
     cursor:pointer;
-    transition:0.4s ease;
+
+    transition:0.3s ease;
 }
 
-.btn-gold{
-    background:linear-gradient(
-    135deg,
-    #d4af37,
-    #f4d775
-    );
-
-    color:black;
-
-    box-shadow:
-    0 12px 35px rgba(212,175,55,0.28);
+.btn-green{
+    background:#148043;
+    color:#fff;
 }
 
-.btn-dark{
-    background:rgba(255,255,255,0.05);
-
-    color:white;
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(10px);
+.btn-green:hover{
+    background:#0f6a37;
 }
 
-.btn:hover{
-    transform:translateY(-4px) scale(1.03);
+.btn-light{
+    background:#fff;
+    color:#111;
+
+    border:1px solid #e5e5e5;
+}
+
+.btn-light:hover{
+    border-color:#148043;
+    color:#148043;
 }
 
 /* SECTION TITLE */
 
 .section-title{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:55px;
 }
 
 .section-title h2{
-    font-size:48px;
-    margin-bottom:15px;
+    font-size:42px;
+    margin-bottom:12px;
 }
 
 .section-title p{
-    color:#aaaaaa;
+    color:#777;
 }
 
 /* FEATURES */
@@ -276,127 +226,105 @@ nav{
 
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:24px;
+
+    gap:20px;
 }
 
 .feature-card{
-    background:linear-gradient(
-    180deg,
-    rgba(24,24,24,0.95),
-    rgba(10,10,10,0.95)
-    );
+    padding:35px 28px;
 
-    border-radius:30px;
+    border:1px solid #ececec;
 
-    padding:45px 30px;
+    border-radius:24px;
 
-    border:1px solid rgba(255,255,255,0.06);
+    background:#fff;
 
-    transition:0.4s ease;
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,0.45);
+    transition:0.3s ease;
 }
 
 .feature-card:hover{
-    transform:translateY(-12px);
-
-    border-color:rgba(212,175,55,0.5);
-
-    box-shadow:
-    0 25px 60px rgba(212,175,55,0.12);
+    border-color:#148043;
+    transform:translateY(-5px);
 }
 
 .feature-icon{
-    width:65px;
-    height:65px;
+    width:58px;
+    height:58px;
 
-    border-radius:18px;
+    border-radius:16px;
 
-    background:rgba(212,175,55,0.12);
+    background:#edf8f1;
 
-    color:#d4af37;
+    color:#148043;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
-    font-size:24px;
+    font-size:22px;
 
-    margin-bottom:25px;
+    margin-bottom:24px;
 }
 
 .feature-card h3{
-    font-size:22px;
-    margin-bottom:15px;
+    font-size:21px;
+    margin-bottom:12px;
 }
 
 .feature-card p{
-    color:#a9a9a9;
-    line-height:1.8;
+    color:#666;
+    line-height:1.7;
     font-size:14px;
 }
 
 /* PRODUCTS */
 
 .products{
-    padding:20px 7% 120px;
+    padding:20px 7% 100px;
 }
 
 .product-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:28px;
+
+    gap:24px;
 }
 
 .product-card{
-    position:relative;
+    border:1px solid #ebebeb;
 
-    padding:35px;
-
-    border-radius:35px;
+    border-radius:28px;
 
     overflow:hidden;
 
-    background:linear-gradient(
-    180deg,
-    rgba(25,25,25,0.95),
-    rgba(10,10,10,0.95)
-    );
+    background:#fff;
 
-    border:1px solid rgba(255,255,255,0.05);
-
-    transition:0.45s ease;
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,0.45);
-}
-
-.product-card::before{
-    content:'';
-    position:absolute;
-    top:-100px;
-    right:-100px;
-
-    width:220px;
-    height:220px;
-
-    background:radial-gradient(
-    circle,
-    rgba(212,175,55,0.12),
-    transparent 70%
-    );
+    transition:0.3s ease;
 }
 
 .product-card:hover{
-    transform:translateY(-14px);
+    border-color:#148043;
+    transform:translateY(-6px);
+}
 
-    border-color:rgba(212,175,55,0.4);
+.product-image{
+    height:320px;
+    overflow:hidden;
+}
 
-    box-shadow:
-    0 30px 70px rgba(212,175,55,0.12);
+.product-image img{
+    height:100%;
+    object-fit:cover;
+
+    transition:0.4s ease;
+}
+
+.product-card:hover img{
+    transform:scale(1.04);
+}
+
+.product-content{
+    padding:25px;
 }
 
 .product-top{
@@ -404,102 +332,50 @@ nav{
     justify-content:space-between;
     align-items:center;
 
-    margin-bottom:40px;
+    margin-bottom:15px;
 }
 
-.product-badge{
-    padding:8px 16px;
-    border-radius:40px;
-
-    background:rgba(212,175,55,0.12);
-
-    color:#d4af37;
-
+.badge{
     font-size:12px;
+
+    background:#edf8f1;
+
+    color:#148043;
+
+    padding:8px 14px;
+
+    border-radius:40px;
 }
 
-.product-heart{
-    width:42px;
-    height:42px;
+.wishlist{
+    width:38px;
+    height:38px;
 
     border-radius:50%;
 
-    background:rgba(255,255,255,0.05);
+    border:1px solid #ececec;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
-    color:white;
+    color:#111;
+
+    cursor:pointer;
 }
 
-.perfume-shape{
-    width:160px;
-    height:220px;
-
-    margin:auto;
-    margin-bottom:40px;
-
-    border-radius:35px 35px 55px 55px;
-
-    background:linear-gradient(
-    180deg,
-    #1b1b1b,
-    #0d0d0d
-    );
-
-    border:1px solid rgba(255,255,255,0.06);
-
-    position:relative;
-
-    box-shadow:
-    inset 0 0 20px rgba(255,255,255,0.04),
-    0 20px 50px rgba(0,0,0,0.5);
+.product-content h3{
+    font-size:24px;
+    margin-bottom:12px;
 }
 
-.perfume-shape::before{
-    content:'';
-    position:absolute;
+.product-content p{
+    color:#666;
+    line-height:1.7;
 
-    width:70px;
-    height:28px;
-
-    background:#d4af37;
-
-    top:-14px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    border-radius:10px;
-}
-
-.perfume-shape::after{
-    content:'MUSQ';
-    position:absolute;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    color:#d4af37;
-
-    font-size:28px;
-    font-weight:700;
-    letter-spacing:4px;
-}
-
-.product-card h3{
-    font-size:26px;
-    margin-bottom:14px;
-}
-
-.product-card p{
-    color:#a9a9a9;
-    line-height:1.8;
-    margin-bottom:28px;
     font-size:14px;
+
+    margin-bottom:24px;
 }
 
 .product-bottom{
@@ -511,79 +387,70 @@ nav{
 .price{
     font-size:24px;
     font-weight:700;
-    color:#d4af37;
+
+    color:#148043;
 }
 
 .cart-btn{
-    width:55px;
-    height:55px;
+    width:52px;
+    height:52px;
 
     border:none;
-    border-radius:18px;
 
-    background:linear-gradient(
-    135deg,
-    #d4af37,
-    #f3d06d
-    );
+    border-radius:16px;
 
-    color:black;
+    background:#148043;
+
+    color:#fff;
+
     font-size:18px;
 
     cursor:pointer;
 
-    transition:0.4s ease;
+    transition:0.3s ease;
 }
 
 .cart-btn:hover{
-    transform:scale(1.08);
+    background:#0f6a37;
 }
 
 /* CTA */
 
 .cta{
-    margin:0 7% 120px;
+    margin:0 7% 100px;
 
-    padding:80px 40px;
+    padding:70px 30px;
 
-    border-radius:40px;
+    border:1px solid #ececec;
+
+    border-radius:30px;
 
     text-align:center;
-
-    background:linear-gradient(
-    180deg,
-    rgba(20,20,20,0.95),
-    rgba(8,8,8,0.95)
-    );
-
-    border:1px solid rgba(255,255,255,0.06);
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,0.45);
 }
 
 .cta h2{
-    font-size:52px;
-    margin-bottom:20px;
+    font-size:46px;
+    margin-bottom:18px;
 }
 
 .cta p{
     max-width:700px;
+
     margin:auto;
 
-    color:#b9b9b9;
+    color:#666;
 
-    line-height:1.9;
+    line-height:1.8;
 
-    margin-bottom:35px;
+    margin-bottom:30px;
 }
 
 /* FOOTER */
 
 footer{
-    padding:40px 7%;
+    padding:35px 7%;
 
-    border-top:1px solid rgba(255,255,255,0.05);
+    border-top:1px solid #eee;
 
     text-align:center;
 
@@ -603,7 +470,7 @@ footer{
 }
 
 .hero h1{
-    font-size:52px;
+    font-size:48px;
 }
 
 }
@@ -619,9 +486,9 @@ nav{
 }
 
 .icon-btn{
-    width:42px;
-    height:42px;
-    font-size:15px;
+    width:40px;
+    height:40px;
+    font-size:14px;
 }
 
 .hero{
@@ -629,7 +496,7 @@ nav{
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:38px;
 }
 
 .hero p{
@@ -650,7 +517,7 @@ nav{
 }
 
 .products{
-    padding:10px 5% 90px;
+    padding:10px 5% 80px;
 }
 
 .product-grid{
@@ -658,16 +525,16 @@ nav{
 }
 
 .section-title h2{
-    font-size:36px;
+    font-size:34px;
 }
 
 .cta{
     margin:0 5% 80px;
-    padding:60px 25px;
+    padding:55px 24px;
 }
 
 .cta h2{
-    font-size:36px;
+    font-size:34px;
 }
 
 }
@@ -677,12 +544,13 @@ nav{
 
 <body>
 
-<div class="glow glow1"></div>
-<div class="glow glow2"></div>
+<!-- NAVBAR -->
 
 <nav>
 
-<div class="logo">MUSQ</div>
+<div class="logo">
+MUSQ
+</div>
 
 <div class="nav-icons">
 
@@ -706,6 +574,8 @@ nav{
 
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
 
 <div class="hero-content">
@@ -715,22 +585,22 @@ Luxury B2B Perfume Supplier
 </div>
 
 <h1>
-Premium Luxury Fragrance Experience
+Premium Fragrances For Modern Brands
 </h1>
 
 <p>
-MUSQ WORLD PERFUMES creates world-class luxury fragrances
-with premium quality, elegant packaging, and global wholesale
-solutions for modern perfume businesses.
+MUSQ WORLD PERFUMES delivers premium fragrance collections,
+private labeling solutions, and global wholesale perfume supply
+for modern businesses.
 </p>
 
 <div class="hero-buttons">
 
-<button class="btn btn-gold">
+<button class="btn btn-green">
 Become Partner
 </button>
 
-<button class="btn btn-dark">
+<button class="btn btn-light">
 Explore Collection
 </button>
 
@@ -739,6 +609,8 @@ Explore Collection
 </div>
 
 </section>
+
+<!-- FEATURES -->
 
 <section class="features">
 
@@ -751,7 +623,7 @@ Explore Collection
 <h3>Premium Quality</h3>
 
 <p>
-Luxury crafted fragrances made using premium long-lasting oils and elegant blends.
+Crafted using premium fragrance oils with long-lasting luxury notes.
 </p>
 
 </div>
@@ -765,7 +637,7 @@ Luxury crafted fragrances made using premium long-lasting oils and elegant blend
 <h3>Bulk Orders</h3>
 
 <p>
-Flexible wholesale ordering solutions for growing perfume businesses worldwide.
+Flexible wholesale ordering solutions for growing perfume businesses.
 </p>
 
 </div>
@@ -779,7 +651,7 @@ Flexible wholesale ordering solutions for growing perfume businesses worldwide.
 <h3>Global Shipping</h3>
 
 <p>
-Worldwide delivery with secure logistics and premium packaging standards.
+Worldwide delivery with premium packaging and secure logistics.
 </p>
 
 </div>
@@ -793,47 +665,61 @@ Worldwide delivery with secure logistics and premium packaging standards.
 <h3>Private Label</h3>
 
 <p>
-Build your own luxury perfume brand with exclusive MUSQ private labeling.
+Create your own perfume brand with MUSQ private label solutions.
 </p>
 
 </div>
 
 </section>
 
+<!-- PRODUCTS -->
+
 <section class="products">
 
 <div class="section-title">
 
-<h2>Luxury Collection</h2>
+<h2>
+Luxury Collection
+</h2>
 
 <p>
-Modern premium fragrance collection designed for global luxury markets.
+Modern fragrance collections designed for global premium markets.
 </p>
 
 </div>
 
 <div class="product-grid">
 
+<!-- PRODUCT -->
+
 <div class="product-card">
+
+<div class="product-image">
+
+<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+<div class="product-content">
 
 <div class="product-top">
 
-<div class="product-badge">
+<div class="badge">
 Luxury Edition
 </div>
 
-<div class="product-heart">
+<div class="wishlist">
 <i class="fa-regular fa-heart"></i>
 </div>
 
 </div>
 
-<div class="perfume-shape"></div>
-
-<h3>Royal Oud</h3>
+<h3>
+Royal Oud
+</h3>
 
 <p>
-Elegant oriental luxury fragrance with rich oud notes and modern depth.
+Elegant oriental fragrance with premium woody and oud notes.
 </p>
 
 <div class="product-bottom">
@@ -850,26 +736,38 @@ $120
 
 </div>
 
+</div>
+
+<!-- PRODUCT -->
+
 <div class="product-card">
+
+<div class="product-image">
+
+<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+<div class="product-content">
 
 <div class="product-top">
 
-<div class="product-badge">
+<div class="badge">
 Signature
 </div>
 
-<div class="product-heart">
+<div class="wishlist">
 <i class="fa-regular fa-heart"></i>
 </div>
 
 </div>
 
-<div class="perfume-shape"></div>
-
-<h3>Golden Essence</h3>
+<h3>
+Golden Essence
+</h3>
 
 <p>
-Premium golden fragrance crafted for luxury perfume collections worldwide.
+Premium fragrance crafted for luxury perfume collections worldwide.
 </p>
 
 <div class="product-bottom">
@@ -886,26 +784,38 @@ $150
 
 </div>
 
+</div>
+
+<!-- PRODUCT -->
+
 <div class="product-card">
+
+<div class="product-image">
+
+<img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+<div class="product-content">
 
 <div class="product-top">
 
-<div class="product-badge">
+<div class="badge">
 Exclusive
 </div>
 
-<div class="product-heart">
+<div class="wishlist">
 <i class="fa-regular fa-heart"></i>
 </div>
 
 </div>
 
-<div class="perfume-shape"></div>
-
-<h3>Midnight Musk</h3>
+<h3>
+Midnight Musk
+</h3>
 
 <p>
-Bold luxury musky fragrance with elegant modern aromatic layers.
+Bold musky fragrance with elegant modern aromatic layers.
 </p>
 
 <div class="product-bottom">
@@ -924,24 +834,30 @@ $180
 
 </div>
 
+</div>
+
 </section>
+
+<!-- CTA -->
 
 <section class="cta">
 
 <h2>
-Build Your Luxury Perfume Brand
+Build Your Perfume Brand
 </h2>
 
 <p>
 Partner with MUSQ WORLD PERFUMES and access premium fragrances,
-luxury packaging, private labeling, and worldwide wholesale opportunities.
+luxury packaging, and worldwide wholesale opportunities.
 </p>
 
-<button class="btn btn-gold">
+<button class="btn btn-green">
 Start Business Today
 </button>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -950,4 +866,4 @@ Start Business Today
 </footer>
 
 </body>
-  </html>
+    </html>
