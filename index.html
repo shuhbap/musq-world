@@ -1,3 +1,7 @@
+<!-- ===================================================== -->
+<!-- ====================== INDEX.HTML =================== -->
+<!-- ===================================================== -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +11,27 @@
 
 <title>MUSQ World Perfumes</title>
 
+<!-- ===================================================== -->
+<!-- ====================== GOOGLE FONTS ================= -->
+<!-- ===================================================== -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
+<!-- ===================================================== -->
+<!-- ====================== FONT AWESOME ================= -->
+<!-- ===================================================== -->
+
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
+
+/* ===================================================== */
+/* ====================== GLOBAL ======================== */
+/* ===================================================== */
 
 *{
     margin:0;
@@ -43,24 +59,20 @@ a{
     text-decoration:none;
 }
 
-/* =========================
-PREMIUM LOADER
-========================= */
+/* ===================================================== */
+/* ====================== PREMIUM LOADER =============== */
+/* ===================================================== */
 
 .loader{
     position:fixed;
     inset:0;
-
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
-
     background:
     radial-gradient(circle at top,#f7fff9,#ffffff);
-
     z-index:99999;
-
     transition:1s ease;
 }
 
@@ -71,41 +83,30 @@ PREMIUM LOADER
 
 .loader::before{
     content:'';
-
     position:absolute;
-
     width:420px;
     height:420px;
-
     border-radius:50%;
-
     background:
     radial-gradient(
         circle,
         rgba(20,128,67,0.18),
         transparent 70%
     );
-
     animation:glowPulse 4s ease-in-out infinite;
 }
 
 .loader-circle{
     position:relative;
-
     width:130px;
     height:130px;
-
     border-radius:50%;
-
     border:4px solid rgba(20,128,67,0.08);
-
     border-top:4px solid #148043;
     border-right:4px solid #2ac76d;
-
     animation:
     spin 1.1s linear infinite,
     zoomPulse 2s ease-in-out infinite;
-
     box-shadow:
     0 0 45px rgba(20,128,67,0.22),
     inset 0 0 25px rgba(20,128,67,0.08);
@@ -113,69 +114,33 @@ PREMIUM LOADER
 
 .loader-circle::before{
     content:'';
-
     position:absolute;
-
     inset:14px;
-
     border-radius:50%;
-
     border:3px solid rgba(20,128,67,0.08);
-
     border-bottom:3px solid #148043;
-
     animation:reverseSpin 2s linear infinite;
-}
-
-.loader-circle::after{
-    content:'';
-
-    position:absolute;
-
-    width:16px;
-    height:16px;
-
-    background:#148043;
-
-    border-radius:50%;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    box-shadow:0 0 20px rgba(20,128,67,0.5);
 }
 
 .loader-text{
     margin-top:34px;
-
     font-size:42px;
-
     letter-spacing:10px;
-
     font-family:'Cormorant Garamond',serif;
-
     font-weight:700;
-
     color:#148043;
-
-    animation:textGlow 2.5s ease-in-out infinite;
 }
 
 .loader-sub{
     margin-top:10px;
-
     font-size:12px;
-
     letter-spacing:5px;
-
     color:#666;
 }
 
-/* =========================
-ANIMATIONS
-========================= */
+/* ===================================================== */
+/* ====================== ANIMATIONS =================== */
+/* ===================================================== */
 
 @keyframes spin{
     100%{
@@ -212,102 +177,94 @@ ANIMATIONS
     }
 }
 
-@keyframes textGlow{
-
-    0%,100%{
-        opacity:0.8;
-        letter-spacing:10px;
-    }
-
-    50%{
-        opacity:1;
-        letter-spacing:14px;
-    }
-}
-
-/* =========================
-NAVBAR
-========================= */
+/* ===================================================== */
+/* ====================== NAVBAR ======================= */
+/* ===================================================== */
 
 nav{
     width:100%;
-
     padding:14px 5%;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     position:fixed;
     top:0;
     z-index:1000;
-
     background:rgba(255,255,255,0.92);
-
     backdrop-filter:blur(14px);
-
     border-bottom:1px solid #f1f1f1;
 }
 
 .logo{
     font-size:38px;
-
     font-weight:700;
-
     letter-spacing:6px;
-
     color:#148043;
-
     font-family:'Cormorant Garamond',serif;
 }
 
 .nav-icons{
     display:flex;
-    gap:10px;
+    gap:12px;
+}
+
+/* ===================================================== */
+/* ====================== NAV ICON ===================== */
+/* ===================================================== */
+
+.icon-wrapper{
+    position:relative;
 }
 
 .icon-btn{
-    width:44px;
-    height:44px;
-
+    width:48px;
+    height:48px;
     border-radius:50%;
-
     border:1px solid #ececec;
-
     background:#fff;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     color:#111;
-
     cursor:pointer;
-
     transition:0.35s ease;
+    font-size:15px;
 }
 
 .icon-btn:hover{
     background:#148043;
     color:#fff;
     border-color:#148043;
-
     transform:translateY(-3px);
 }
 
-/* =========================
-HERO
-========================= */
-
-.hero{
-    min-height:100vh;
-
+.icon-badge{
+    position:absolute;
+    top:-5px;
+    right:-3px;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#148043;
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
     display:flex;
     justify-content:center;
     align-items:center;
+    border:2px solid #fff;
+}
 
+/* ===================================================== */
+/* ====================== HERO ========================= */
+/* ===================================================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-
     padding:120px 5% 70px;
 }
 
@@ -317,41 +274,27 @@ HERO
 
 .tag{
     display:inline-block;
-
     padding:11px 22px;
-
     border-radius:50px;
-
     background:#edf8f1;
-
     color:#148043;
-
     font-size:13px;
-
     margin-bottom:24px;
 }
 
 .hero h1{
     font-size:74px;
-
     line-height:1.04;
-
     margin-bottom:18px;
-
     font-family:'Cormorant Garamond',serif;
 }
 
 .hero p{
     color:#666;
-
     line-height:1.8;
-
     font-size:16px;
-
     max-width:760px;
-
     margin:auto;
-
     margin-bottom:30px;
 }
 
@@ -362,18 +305,17 @@ HERO
     flex-wrap:wrap;
 }
 
+/* ===================================================== */
+/* ====================== BUTTON ======================= */
+/* ===================================================== */
+
 .btn{
     padding:15px 32px;
-
     border:none;
-
     border-radius:50px;
-
     font-size:14px;
     font-weight:600;
-
     cursor:pointer;
-
     transition:0.35s ease;
 }
 
@@ -389,7 +331,6 @@ HERO
 
 .btn-light{
     background:#fff;
-
     border:1px solid #ececec;
 }
 
@@ -398,9 +339,9 @@ HERO
     color:#148043;
 }
 
-/* =========================
-PRODUCTS
-========================= */
+/* ===================================================== */
+/* ====================== PRODUCTS ===================== */
+/* ===================================================== */
 
 .products{
     padding:0 5% 100px;
@@ -413,9 +354,7 @@ PRODUCTS
 
 .section-title h2{
     font-size:56px;
-
     font-family:'Cormorant Garamond',serif;
-
     margin-bottom:10px;
 }
 
@@ -423,39 +362,37 @@ PRODUCTS
     color:#777;
 }
 
+/* ===================================================== */
+/* ====================== PRODUCT GRID ================= */
+/* ===================================================== */
+
 .product-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
 }
+
+/* ===================================================== */
+/* ====================== PRODUCT CARD ================= */
+/* ===================================================== */
 
 .product-card{
     position:relative;
-
     background:#fff;
-
-    border-radius:32px;
-
+    border-radius:30px;
     overflow:hidden;
-
-    border:1px solid #efefef;
-
+    border:1px solid #ececec;
     transition:0.45s ease;
-
     box-shadow:
-    0 10px 35px rgba(0,0,0,0.03);
+    0 10px 30px rgba(0,0,0,0.03);
 }
 
 .product-card::before{
     content:'';
-
     position:absolute;
     inset:0;
-
-    border-radius:32px;
-
+    border-radius:30px;
     padding:1px;
-
     background:
     linear-gradient(
         135deg,
@@ -472,7 +409,6 @@ PRODUCTS
     mask-composite:exclude;
 
     opacity:0;
-
     transition:0.4s ease;
 }
 
@@ -484,15 +420,18 @@ PRODUCTS
     transform:translateY(-10px);
 }
 
+/* ===================================================== */
+/* ====================== PRODUCT IMAGE ================ */
+/* ===================================================== */
+
 .product-image{
-    height:340px;
+    height:280px;
     overflow:hidden;
 }
 
 .product-image img{
     height:100%;
     object-fit:cover;
-
     transition:0.6s ease;
 }
 
@@ -500,27 +439,26 @@ PRODUCTS
     transform:scale(1.08);
 }
 
+/* ===================================================== */
+/* ====================== PRODUCT CONTENT ============== */
+/* ===================================================== */
+
 .product-content{
-    padding:24px;
+    padding:22px;
 }
 
 .product-top{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     margin-bottom:16px;
 }
 
 .badge{
-    padding:9px 16px;
-
+    padding:8px 14px;
     border-radius:40px;
-
     background:#edf8f1;
-
     color:#148043;
-
     font-size:11px;
     font-weight:600;
 }
@@ -528,17 +466,12 @@ PRODUCTS
 .top-wishlist{
     width:42px;
     height:42px;
-
     border-radius:50%;
-
     border:1px solid #ececec;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     transition:0.3s ease;
-
     cursor:pointer;
 }
 
@@ -549,87 +482,68 @@ PRODUCTS
 }
 
 .product-content h3{
-    font-size:34px;
-
+    font-size:30px;
     margin-bottom:10px;
-
     font-family:'Cormorant Garamond',serif;
 }
 
 .product-content p{
     color:#666;
-
     line-height:1.7;
-
     font-size:14px;
-
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
-/* =========================
-PREMIUM DETAILS
-========================= */
+/* ===================================================== */
+/* ====================== PRODUCT DETAILS ============== */
+/* ===================================================== */
 
 .product-details{
     display:flex;
     flex-direction:column;
     gap:12px;
-
-    margin-bottom:24px;
+    margin-bottom:22px;
 }
 
 .detail{
     display:flex;
     align-items:center;
     gap:12px;
-
     color:#444;
-
     font-size:13px;
 }
 
 .detail-icon{
     width:32px;
     height:32px;
-
     border-radius:10px;
-
     background:
     linear-gradient(
         135deg,
         #148043,
         #24b864
     );
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     color:#fff;
-
     font-size:12px;
-
-    box-shadow:
-    0 10px 20px rgba(20,128,67,0.18);
 }
 
-/* =========================
-BOTTOM
-========================= */
+/* ===================================================== */
+/* ====================== PRODUCT BOTTOM =============== */
+/* ===================================================== */
 
 .product-bottom{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     gap:14px;
 }
 
 .price{
-    font-size:28px;
-
+    font-size:26px;
     font-weight:700;
-
     color:#148043;
 }
 
@@ -640,16 +554,11 @@ BOTTOM
 
 .action-btn{
     padding:13px 18px;
-
     border:none;
-
     border-radius:14px;
-
     font-size:13px;
     font-weight:600;
-
     cursor:pointer;
-
     transition:0.35s ease;
 }
 
@@ -664,7 +573,7 @@ BOTTOM
 }
 
 .wishlist-btn{
-    background:#f7f7f7;
+    background:#f5f5f5;
     color:#111;
 }
 
@@ -673,68 +582,53 @@ BOTTOM
     color:#fff;
 }
 
-/* =========================
-CTA
-========================= */
+/* ===================================================== */
+/* ====================== CTA ========================== */
+/* ===================================================== */
 
 .cta{
     margin:0 5% 90px;
-
     padding:75px 28px;
-
     border-radius:34px;
-
     background:
     linear-gradient(
         135deg,
         #ffffff,
         #f7fbf8
     );
-
     border:1px solid #ececec;
-
     text-align:center;
 }
 
 .cta h2{
     font-size:56px;
-
     margin-bottom:18px;
-
     font-family:'Cormorant Garamond',serif;
 }
 
 .cta p{
     max-width:760px;
-
     margin:auto;
-
     color:#666;
-
     line-height:1.8;
-
     margin-bottom:32px;
 }
 
-/* =========================
-FOOTER
-========================= */
+/* ===================================================== */
+/* ====================== FOOTER ======================= */
+/* ===================================================== */
 
 footer{
     padding:34px 5%;
-
     text-align:center;
-
     border-top:1px solid #f0f0f0;
-
     color:#777;
-
     font-size:14px;
 }
 
-/* =========================
-REVEAL
-========================= */
+/* ===================================================== */
+/* ====================== REVEAL ======================= */
+/* ===================================================== */
 
 .reveal{
     opacity:0;
@@ -747,14 +641,14 @@ REVEAL
     transform:translateY(0);
 }
 
-/* =========================
-MOBILE
-========================= */
+/* ===================================================== */
+/* ====================== MOBILE ======================= */
+/* ===================================================== */
 
 @media(max-width:992px){
 
 .product-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
 }
 
 .hero h1{
@@ -765,24 +659,12 @@ MOBILE
 
 @media(max-width:768px){
 
-nav{
-    padding:14px 5%;
-}
-
 .logo{
     font-size:28px;
 }
 
-.hero{
-    padding:120px 5% 70px;
-}
-
 .hero h1{
-    font-size:44px;
-}
-
-.hero p{
-    font-size:15px;
+    font-size:42px;
 }
 
 .hero-buttons{
@@ -793,30 +675,12 @@ nav{
     width:100%;
 }
 
-.product-grid{
-    grid-template-columns:1fr;
-}
-
 .section-title h2{
     font-size:42px;
 }
 
-.cta{
-    padding:55px 22px;
-}
-
 .cta h2{
     font-size:40px;
-}
-
-.loader-circle{
-    width:105px;
-    height:105px;
-}
-
-.loader-text{
-    font-size:30px;
-    letter-spacing:7px;
 }
 
 .product-bottom{
@@ -835,11 +699,14 @@ nav{
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- PREMIUM LOADER -->
+<!-- ===================================================== -->
+<!-- ====================== PREMIUM LOADER =============== -->
+<!-- ===================================================== -->
 
 <div class="loader">
 
@@ -855,7 +722,9 @@ Luxury Perfume Experience
 
 </div>
 
-<!-- NAVBAR -->
+<!-- ===================================================== -->
+<!-- ====================== NAVBAR ======================= -->
+<!-- ===================================================== -->
 
 <nav>
 
@@ -865,19 +734,47 @@ MUSQ
 
 <div class="nav-icons">
 
+<div class="icon-wrapper">
+
 <button class="icon-btn">
 <i class="fa-solid fa-magnifying-glass"></i>
 </button>
 
+</div>
+
+<div class="icon-wrapper">
+
 <button class="icon-btn"
 onclick="window.location.href='wishlist.html'">
+
 <i class="fa-regular fa-heart"></i>
+
 </button>
+
+<div class="icon-badge"
+id="wishlist-count">
+0
+</div>
+
+</div>
+
+<div class="icon-wrapper">
 
 <button class="icon-btn"
 onclick="window.location.href='cart.html'">
+
 <i class="fa-solid fa-bag-shopping"></i>
+
 </button>
+
+<div class="icon-badge"
+id="cart-count">
+0
+</div>
+
+</div>
+
+<div class="icon-wrapper">
 
 <button class="icon-btn">
 <i class="fa-regular fa-user"></i>
@@ -885,9 +782,13 @@ onclick="window.location.href='cart.html'">
 
 </div>
 
+</div>
+
 </nav>
 
-<!-- HERO -->
+<!-- ===================================================== -->
+<!-- ====================== HERO ========================= -->
+<!-- ===================================================== -->
 
 <section class="hero reveal">
 
@@ -923,7 +824,9 @@ Explore Collection
 
 </section>
 
-<!-- PRODUCTS -->
+<!-- ===================================================== -->
+<!-- ====================== PRODUCTS ===================== -->
+<!-- ===================================================== -->
 
 <section class="products">
 
@@ -939,16 +842,20 @@ Premium fragrance collection crafted for modern luxury perfume markets.
 
 </div>
 
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT GRID ================= -->
+<!-- ===================================================== -->
+
 <div class="product-grid">
 
-<!-- PRODUCT 1 -->
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT 1 ==================== -->
+<!-- ===================================================== -->
 
 <div class="product-card reveal">
 
 <div class="product-image">
-
-<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop">
-
+<img src="images/product1.jpg">
 </div>
 
 <div class="product-content">
@@ -960,7 +867,7 @@ Luxury Edition
 </div>
 
 <div class="top-wishlist"
-onclick="window.location.href='wishlist.html'">
+onclick="addToWishlist(0)">
 <i class="fa-regular fa-heart"></i>
 </div>
 
@@ -985,23 +892,9 @@ Premium Long Lasting
 
 <div class="detail">
 <div class="detail-icon">
-<i class="fa-solid fa-shield"></i>
-</div>
-Luxury Quality Blend
-</div>
-
-<div class="detail">
-<div class="detail-icon">
 <i class="fa-solid fa-truck-fast"></i>
 </div>
 Worldwide Delivery
-</div>
-
-<div class="detail">
-<div class="detail-icon">
-<i class="fa-solid fa-sparkles"></i>
-</div>
-Private Label Support
 </div>
 
 </div>
@@ -1015,12 +908,12 @@ Private Label Support
 <div class="action-buttons">
 
 <button class="action-btn wishlist-btn"
-onclick="window.location.href='wishlist.html'">
+onclick="addToWishlist(0)">
 Wishlist
 </button>
 
 <button class="action-btn cart-btn"
-onclick="window.location.href='cart.html'">
+onclick="addToCart(0)">
 Add To Cart
 </button>
 
@@ -1032,14 +925,14 @@ Add To Cart
 
 </div>
 
-<!-- PRODUCT 2 -->
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT 2 ==================== -->
+<!-- ===================================================== -->
 
 <div class="product-card reveal">
 
 <div class="product-image">
-
-<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1200&auto=format&fit=crop">
-
+<img src="images/product2.jpg">
 </div>
 
 <div class="product-content">
@@ -1051,7 +944,7 @@ Signature
 </div>
 
 <div class="top-wishlist"
-onclick="window.location.href='wishlist.html'">
+onclick="addToWishlist(1)">
 <i class="fa-regular fa-heart"></i>
 </div>
 
@@ -1081,20 +974,6 @@ Luxury Aroma Blend
 Premium Export Quality
 </div>
 
-<div class="detail">
-<div class="detail-icon">
-<i class="fa-solid fa-truck-fast"></i>
-</div>
-Global Fast Shipping
-</div>
-
-<div class="detail">
-<div class="detail-icon">
-<i class="fa-solid fa-sparkles"></i>
-</div>
-Elegant Packaging
-</div>
-
 </div>
 
 <div class="product-bottom">
@@ -1106,12 +985,12 @@ Elegant Packaging
 <div class="action-buttons">
 
 <button class="action-btn wishlist-btn"
-onclick="window.location.href='wishlist.html'">
+onclick="addToWishlist(1)">
 Wishlist
 </button>
 
 <button class="action-btn cart-btn"
-onclick="window.location.href='cart.html'">
+onclick="addToCart(1)">
 Add To Cart
 </button>
 
@@ -1123,14 +1002,14 @@ Add To Cart
 
 </div>
 
-<!-- PRODUCT 3 -->
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT 3 ==================== -->
+<!-- ===================================================== -->
 
 <div class="product-card reveal">
 
 <div class="product-image">
-
-<img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop">
-
+<img src="images/product3.jpg">
 </div>
 
 <div class="product-content">
@@ -1142,7 +1021,7 @@ Exclusive
 </div>
 
 <div class="top-wishlist"
-onclick="window.location.href='wishlist.html'">
+onclick="addToWishlist(2)">
 <i class="fa-regular fa-heart"></i>
 </div>
 
@@ -1167,20 +1046,6 @@ Ultra Premium Oils
 
 <div class="detail">
 <div class="detail-icon">
-<i class="fa-solid fa-shield"></i>
-</div>
-Long Lasting Formula
-</div>
-
-<div class="detail">
-<div class="detail-icon">
-<i class="fa-solid fa-truck-fast"></i>
-</div>
-Worldwide Shipping
-</div>
-
-<div class="detail">
-<div class="detail-icon">
 <i class="fa-solid fa-sparkles"></i>
 </div>
 Luxury Bottle Design
@@ -1197,12 +1062,397 @@ Luxury Bottle Design
 <div class="action-buttons">
 
 <button class="action-btn wishlist-btn"
-onclick="window.location.href='wishlist.html'">
+onclick="addToWishlist(2)">
 Wishlist
 </button>
 
 <button class="action-btn cart-btn"
-onclick="window.location.href='cart.html'">
+onclick="addToCart(2)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT 4 ==================== -->
+<!-- ===================================================== -->
+
+<div class="product-card reveal">
+
+<div class="product-image">
+<img src="images/product4.jpg">
+</div>
+
+<div class="product-content">
+
+<div class="product-top">
+
+<div class="badge">
+Premium
+</div>
+
+<div class="top-wishlist"
+onclick="addToWishlist(3)">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+</div>
+
+<h3>
+Velvet Noir
+</h3>
+
+<p>
+Dark luxurious fragrance crafted with intense premium aroma notes.
+</p>
+
+<div class="product-details">
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-star"></i>
+</div>
+Luxury Lasting Blend
+</div>
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-truck-fast"></i>
+</div>
+Global Shipping
+</div>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+₹ 5,899
+</div>
+
+<div class="action-buttons">
+
+<button class="action-btn wishlist-btn"
+onclick="addToWishlist(3)">
+Wishlist
+</button>
+
+<button class="action-btn cart-btn"
+onclick="addToCart(3)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT 5 ==================== -->
+<!-- ===================================================== -->
+
+<div class="product-card reveal">
+
+<div class="product-image">
+<img src="images/product5.jpg">
+</div>
+
+<div class="product-content">
+
+<div class="product-top">
+
+<div class="badge">
+Luxury
+</div>
+
+<div class="top-wishlist"
+onclick="addToWishlist(4)">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+</div>
+
+<h3>
+Emerald Aura
+</h3>
+
+<p>
+Fresh premium fragrance inspired by modern luxury elegance.
+</p>
+
+<div class="product-details">
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-star"></i>
+</div>
+Elegant Aroma
+</div>
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-sparkles"></i>
+</div>
+Luxury Packaging
+</div>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+₹ 4,799
+</div>
+
+<div class="action-buttons">
+
+<button class="action-btn wishlist-btn"
+onclick="addToWishlist(4)">
+Wishlist
+</button>
+
+<button class="action-btn cart-btn"
+onclick="addToCart(4)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT 6 ==================== -->
+<!-- ===================================================== -->
+
+<div class="product-card reveal">
+
+<div class="product-image">
+<img src="images/product6.jpg">
+</div>
+
+<div class="product-content">
+
+<div class="product-top">
+
+<div class="badge">
+Modern
+</div>
+
+<div class="top-wishlist"
+onclick="addToWishlist(5)">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+</div>
+
+<h3>
+Silver Bloom
+</h3>
+
+<p>
+Modern premium floral fragrance with smooth luxury undertones.
+</p>
+
+<div class="product-details">
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-star"></i>
+</div>
+Soft Floral Blend
+</div>
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-shield"></i>
+</div>
+Export Quality
+</div>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+₹ 5,199
+</div>
+
+<div class="action-buttons">
+
+<button class="action-btn wishlist-btn"
+onclick="addToWishlist(5)">
+Wishlist
+</button>
+
+<button class="action-btn cart-btn"
+onclick="addToCart(5)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT 7 ==================== -->
+<!-- ===================================================== -->
+
+<div class="product-card reveal">
+
+<div class="product-image">
+<img src="images/product7.jpg">
+</div>
+
+<div class="product-content">
+
+<div class="product-top">
+
+<div class="badge">
+Elite
+</div>
+
+<div class="top-wishlist"
+onclick="addToWishlist(6)">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+</div>
+
+<h3>
+Imperial Wood
+</h3>
+
+<p>
+Strong woody fragrance designed for premium luxury collections.
+</p>
+
+<div class="product-details">
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-star"></i>
+</div>
+Luxury Oils
+</div>
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-truck-fast"></i>
+</div>
+Fast Delivery
+</div>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+₹ 6,799
+</div>
+
+<div class="action-buttons">
+
+<button class="action-btn wishlist-btn"
+onclick="addToWishlist(6)">
+Wishlist
+</button>
+
+<button class="action-btn cart-btn"
+onclick="addToCart(6)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- ====================== PRODUCT 8 ==================== -->
+<!-- ===================================================== -->
+
+<div class="product-card reveal">
+
+<div class="product-image">
+<img src="images/product8.jpg">
+</div>
+
+<div class="product-content">
+
+<div class="product-top">
+
+<div class="badge">
+Luxury
+</div>
+
+<div class="top-wishlist"
+onclick="addToWishlist(7)">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+</div>
+
+<h3>
+Black Amber
+</h3>
+
+<p>
+Rich amber fragrance blended for elite luxury perfume markets.
+</p>
+
+<div class="product-details">
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-star"></i>
+</div>
+Premium Amber Oils
+</div>
+
+<div class="detail">
+<div class="detail-icon">
+<i class="fa-solid fa-sparkles"></i>
+</div>
+Elegant Design
+</div>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+₹ 7,199
+</div>
+
+<div class="action-buttons">
+
+<button class="action-btn wishlist-btn"
+onclick="addToWishlist(7)">
+Wishlist
+</button>
+
+<button class="action-btn cart-btn"
+onclick="addToCart(7)">
 Add To Cart
 </button>
 
@@ -1218,7 +1468,9 @@ Add To Cart
 
 </section>
 
-<!-- CTA -->
+<!-- ===================================================== -->
+<!-- ====================== CTA ========================== -->
+<!-- ===================================================== -->
 
 <section class="cta reveal">
 
@@ -1237,7 +1489,9 @@ Start Business Today
 
 </section>
 
-<!-- FOOTER -->
+<!-- ===================================================== -->
+<!-- ====================== FOOTER ======================= -->
+<!-- ===================================================== -->
 
 <footer>
 
@@ -1245,9 +1499,183 @@ Start Business Today
 
 </footer>
 
+<!-- ===================================================== -->
+<!-- ====================== JAVASCRIPT =================== -->
+<!-- ===================================================== -->
+
 <script>
 
-/* PREMIUM LOADER */
+/* ===================================================== */
+/* ====================== PRODUCTS DATA ================= */
+/* ===================================================== */
+
+const products = [
+
+{
+id:1,
+title:"Royal Oud",
+price:4999,
+image:"images/product1.jpg",
+brand:"MUSQ WORLD PERFUMES",
+desc:"Elegant oriental fragrance with premium woody and rich oud notes.",
+qty:1
+},
+
+{
+id:2,
+title:"Golden Essence",
+price:5499,
+image:"images/product2.jpg",
+brand:"MUSQ WORLD PERFUMES",
+desc:"Premium fragrance crafted for elite perfume collections worldwide.",
+qty:1
+},
+
+{
+id:3,
+title:"Midnight Musk",
+price:6299,
+image:"images/product3.jpg",
+brand:"MUSQ WORLD PERFUMES",
+desc:"Bold musky fragrance layered with elegant aromatic luxury notes.",
+qty:1
+},
+
+{
+id:4,
+title:"Velvet Noir",
+price:5899,
+image:"images/product4.jpg",
+brand:"MUSQ WORLD PERFUMES",
+desc:"Dark luxurious fragrance crafted with intense premium aroma notes.",
+qty:1
+},
+
+{
+id:5,
+title:"Emerald Aura",
+price:4799,
+image:"images/product5.jpg",
+brand:"MUSQ WORLD PERFUMES",
+desc:"Fresh premium fragrance inspired by modern luxury elegance.",
+qty:1
+},
+
+{
+id:6,
+title:"Silver Bloom",
+price:5199,
+image:"images/product6.jpg",
+brand:"MUSQ WORLD PERFUMES",
+desc:"Modern premium floral fragrance with smooth luxury undertones.",
+qty:1
+},
+
+{
+id:7,
+title:"Imperial Wood",
+price:6799,
+image:"images/product7.jpg",
+brand:"MUSQ WORLD PERFUMES",
+desc:"Strong woody fragrance designed for premium luxury collections.",
+qty:1
+},
+
+{
+id:8,
+title:"Black Amber",
+price:7199,
+image:"images/product8.jpg",
+brand:"MUSQ WORLD PERFUMES",
+desc:"Rich amber fragrance blended for elite luxury perfume markets.",
+qty:1
+}
+
+];
+
+/* ===================================================== */
+/* ====================== LOCAL STORAGE ================= */
+/* ===================================================== */
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+let wishlist =
+JSON.parse(localStorage.getItem("wishlist")) || [];
+
+/* ===================================================== */
+/* ====================== UPDATE BADGES ================= */
+/* ===================================================== */
+
+function updateBadges(){
+
+document.getElementById("cart-count")
+.innerText = cart.length;
+
+document.getElementById("wishlist-count")
+.innerText = wishlist.length;
+
+}
+
+/* ===================================================== */
+/* ====================== ADD TO CART =================== */
+/* ===================================================== */
+
+function addToCart(index){
+
+const product = products[index];
+
+const existingProduct =
+cart.find(item => item.id === product.id);
+
+if(existingProduct){
+
+existingProduct.qty += 1;
+
+}else{
+
+cart.push(product);
+
+}
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+updateBadges();
+
+}
+
+/* ===================================================== */
+/* ====================== ADD TO WISHLIST =============== */
+/* ===================================================== */
+
+function addToWishlist(index){
+
+const product = products[index];
+
+const existingWishlist =
+wishlist.find(item => item.id === product.id);
+
+if(!existingWishlist){
+
+wishlist.push(product);
+
+localStorage.setItem(
+"wishlist",
+JSON.stringify(wishlist)
+);
+
+}
+
+updateBadges();
+
+}
+
+/* ===================================================== */
+/* ====================== LOADER ======================== */
+/* ===================================================== */
 
 window.addEventListener("load",()=>{
 
@@ -1260,9 +1688,12 @@ document.querySelector(".loader")
 
 });
 
-/* REVEAL */
+/* ===================================================== */
+/* ====================== REVEAL ======================== */
+/* ===================================================== */
 
-const reveals = document.querySelectorAll(".reveal");
+const reveals =
+document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
 
@@ -1284,6 +1715,12 @@ element.classList.add("active");
 });
 
 });
+
+/* ===================================================== */
+/* ====================== INITIAL ======================= */
+/* ===================================================== */
+
+updateBadges();
 
 </script>
 
