@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>MUSQ WORLD PERFUMES</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:#f5f5f5;
+    color:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* CARD */
+
+.cart-card{
+    width:360px;
+    background:#fff;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.08);
+    transition:0.4s ease;
+}
+
+.cart-card:hover{
+    transform:translateY(-5px);
+}
+
+/* TOP */
+
+.top{
+    background:#148043;
+    height:170px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.glow{
+    position:absolute;
+    width:220px;
+    height:220px;
+    background:rgba(255,255,255,0.12);
+    border-radius:50%;
+    filter:blur(10px);
+}
+
+.perfume{
+    width:120px;
+    height:120px;
+    background:#fff;
+    border-radius:28px;
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
+}
+
+.perfume::before{
+    content:'';
+    position:absolute;
+    top:-18px;
+    width:42px;
+    height:22px;
+    background:#111;
+    border-radius:8px;
+}
+
+.perfume::after{
+    content:'M';
+    font-size:42px;
+    font-weight:700;
+    color:#148043;
+}
+
+/* CONTENT */
+
+.content{
+    padding:28px;
+}
+
+.brand{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:2px;
+    color:#148043;
+    margin-bottom:10px;
+}
+
+.title{
+    font-size:28px;
+    font-weight:700;
+    line-height:1.1;
+    margin-bottom:12px;
+}
+
+.desc{
+    font-size:14px;
+    color:#666;
+    line-height:1.7;
+    margin-bottom:24px;
+}
+
+/* PRICE */
+
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.price{
+    display:flex;
+    flex-direction:column;
+}
+
+.price span{
+    font-size:12px;
+    color:#888;
+}
+
+.price h2{
+    font-size:28px;
+    color:#111;
+    margin-top:2px;
+}
+
+/* BUTTON */
+
+.btn{
+    border:none;
+    background:#148043;
+    color:#fff;
+    padding:14px 24px;
+    border-radius:16px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    background:#0f6635;
+    transform:scale(1.04);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cart-card">
+
+    <div class="top">
+        <div class="glow"></div>
+
+        <div class="perfume"></div>
+    </div>
+
+    <div class="content">
+
+        <div class="brand">
+            MUSQ WORLD PERFUMES
+        </div>
+
+        <div class="title">
+            Signature<br>
+            Oud Essence
+        </div>
+
+        <div class="desc">
+            Premium long lasting fragrance crafted
+            for modern elegance and timeless luxury.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>Starting From</span>
+                <h2>₹1499</h2>
+            </div>
+
+            <button class="btn">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
