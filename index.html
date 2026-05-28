@@ -1,41 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MUSQ World Perfumes</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 html{
     scroll-behavior:smooth;
 }
-
 body{
     font-family:'Poppins',sans-serif;
     background:#fff;
     color:#111;
     overflow-x:hidden;
 }
-
 /* LOADER */
-
 .loader{
     position:fixed;
     inset:0;
@@ -46,1055 +35,679 @@ body{
     z-index:99999;
     transition:0.8s ease;
 }
-
 .loader.hide{
     opacity:0;
     visibility:hidden;
 }
-
 .loader-circle{
-    width:70px;
-    height:70px;
+    width:65px;
+    height:65px;
     border-radius:50%;
-    border:4px solid #e8f4ed;
+    border:4px solid #edf8f1;
     border-top:4px solid #148043;
     animation:spin 1s linear infinite;
 }
-
 @keyframes spin{
     100%{
         transform:rotate(360deg);
     }
 }
-
 /* GLOBAL */
-
 img{
     width:100%;
     display:block;
 }
-
 a{
     text-decoration:none;
 }
-
 /* NAVBAR */
-
 nav{
     width:100%;
-    padding:18px 7%;
+    padding:14px 6%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     position:fixed;
     top:0;
     z-index:1000;
-
     background:rgba(255,255,255,0.92);
-    backdrop-filter:blur(14px);
-
-    border-bottom:1px solid #f0f0f0;
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid #f2f2f2;
 }
-
-.logo{
-    font-size:32px;
-    font-weight:700;
-    letter-spacing:4px;
-    color:#148043;
-
-    font-family:'Cormorant Garamond',serif;
-}
-
-.nav-icons{
+.nav-left,
+.nav-right{
+    width:33%;
     display:flex;
+    align-items:center;
     gap:12px;
 }
-
+.nav-right{
+    justify-content:flex-end;
+}
+.logo{
+    width:34%;
+    display:flex;
+    justify-content:center;
+}
+.logo img{
+    width:115px;
+    object-fit:contain;
+}
 .icon-btn{
-    width:44px;
-    height:44px;
-
+    width:42px;
+    height:42px;
     border-radius:50%;
-
-    border:1px solid #ebebeb;
-
+    border:1px solid #ececec;
     background:#fff;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    font-size:15px;
-
+    font-size:14px;
     color:#111;
-
     cursor:pointer;
-
     transition:0.3s ease;
 }
-
 .icon-btn:hover{
     background:#148043;
-    color:#fff;
     border-color:#148043;
+    color:#fff;
 }
-
 /* HERO */
-
 .hero{
     min-height:100vh;
-
     display:flex;
-    align-items:center;
     justify-content:center;
-
+    align-items:center;
     text-align:center;
-
-    padding:150px 7% 90px;
+    padding:130px 6% 70px;
 }
-
 .hero-content{
-    max-width:850px;
+    max-width:760px;
 }
-
 .tag{
     display:inline-block;
-
     padding:10px 18px;
-
-    background:#edf8f1;
-
-    color:#148043;
-
     border-radius:40px;
-
-    font-size:14px;
-
-    margin-bottom:26px;
-}
-
-.hero h1{
-    font-size:72px;
-    line-height:1.05;
-
+    background:#edf8f1;
+    color:#148043;
+    font-size:13px;
     margin-bottom:24px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-weight:700;
 }
-
+.hero h1{
+    font-size:64px;
+    line-height:1.05;
+    margin-bottom:22px;
+    font-family:'Cormorant Garamond',serif;
+}
 .hero p{
     color:#666;
     line-height:1.9;
-
-    max-width:720px;
+    max-width:680px;
     margin:auto;
-
-    margin-bottom:36px;
-
-    font-size:17px;
+    margin-bottom:34px;
+    font-size:15px;
 }
-
 .hero-buttons{
     display:flex;
     justify-content:center;
-    gap:16px;
+    gap:14px;
     flex-wrap:wrap;
 }
-
 .btn{
-    padding:15px 32px;
-
+    padding:14px 28px;
     border:none;
-
     border-radius:50px;
-
-    font-size:15px;
+    font-size:14px;
     font-weight:600;
-
     cursor:pointer;
-
     transition:0.3s ease;
 }
-
 .btn-green{
     background:#148043;
     color:#fff;
 }
-
 .btn-green:hover{
-    background:#0e6635;
+    background:#0d6635;
     transform:translateY(-3px);
 }
-
 .btn-light{
     background:#fff;
-    border:1px solid #e7e7e7;
-    color:#111;
+    border:1px solid #ececec;
 }
-
 .btn-light:hover{
     border-color:#148043;
     color:#148043;
 }
-
 /* FEATURES */
-
 .features{
-    padding:30px 7% 110px;
-
+    padding:20px 6% 90px;
     display:grid;
     grid-template-columns:repeat(4,1fr);
-
-    gap:22px;
+    gap:20px;
 }
-
 .feature-card{
-    padding:34px 28px;
-
+    padding:30px 24px;
     border:1px solid #ececec;
-
-    border-radius:26px;
-
+    border-radius:24px;
     transition:0.3s ease;
-
-    background:#fff;
 }
-
 .feature-card:hover{
     transform:translateY(-5px);
     border-color:#148043;
 }
-
 .feature-icon{
-    width:58px;
-    height:58px;
-
+    width:54px;
+    height:54px;
     border-radius:16px;
-
     background:#edf8f1;
-
     color:#148043;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    font-size:22px;
-
-    margin-bottom:24px;
+    font-size:20px;
+    margin-bottom:20px;
 }
-
 .feature-card h3{
-    margin-bottom:12px;
-    font-size:21px;
+    font-size:19px;
+    margin-bottom:10px;
 }
-
 .feature-card p{
+    font-size:14px;
     color:#666;
     line-height:1.8;
-    font-size:14px;
 }
-
-/* SECTION TITLE */
-
+/* SECTION */
 .section-title{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
-
 .section-title h2{
-    font-size:52px;
-    font-family:'Cormorant Garamond',serif;
+    font-size:48px;
     margin-bottom:12px;
+    font-family:'Cormorant Garamond',serif;
 }
-
 .section-title p{
     color:#777;
 }
-
 /* PRODUCTS */
-
 .products{
-    padding:10px 7% 120px;
+    padding:10px 6% 100px;
 }
-
 .product-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:26px;
+    gap:24px;
 }
-
 .product-card{
-    position:relative;
-
-    border-radius:30px;
-
+    border-radius:28px;
     overflow:hidden;
-
-    background:#fff;
-
     border:1px solid #ececec;
-
     transition:0.4s ease;
+    background:#fff;
 }
-
-.product-card::before{
-    content:'';
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:30px;
-
-    padding:1px;
-
-    background:linear-gradient(
-    130deg,
-    transparent,
-    #148043,
-    transparent
-    );
-
-    -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-
-    opacity:0;
-
-    transition:0.4s ease;
-}
-
-.product-card:hover::before{
-    opacity:1;
-}
-
 .product-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-6px);
+    border-color:#148043;
 }
-
 .product-image{
-    height:330px;
+    height:310px;
     overflow:hidden;
 }
-
 .product-image img{
     height:100%;
     object-fit:cover;
     transition:0.5s ease;
 }
-
 .product-card:hover img{
     transform:scale(1.05);
 }
-
 .product-content{
-    padding:24px;
+    padding:22px;
 }
-
 .product-top{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
-
 .badge{
-    padding:8px 14px;
-
-    background:#edf8f1;
-
-    color:#148043;
-
+    padding:7px 14px;
     border-radius:40px;
-
+    background:#edf8f1;
+    color:#148043;
     font-size:12px;
 }
-
 .wishlist{
     width:38px;
     height:38px;
-
     border-radius:50%;
-
     border:1px solid #ececec;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     cursor:pointer;
-
     transition:0.3s ease;
 }
-
 .wishlist:hover{
     background:#148043;
-    color:#fff;
     border-color:#148043;
+    color:#fff;
 }
-
 .product-content h3{
-    font-size:30px;
-
+    font-size:28px;
+    margin-bottom:12px;
     font-family:'Cormorant Garamond',serif;
-
-    margin-bottom:14px;
 }
-
 .product-content p{
+    font-size:14px;
     color:#666;
     line-height:1.8;
-    font-size:14px;
-
     margin-bottom:24px;
 }
-
-/* PRODUCT DETAILS */
-
-.product-details{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-
-    margin-bottom:26px;
-}
-
-.detail{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    font-size:14px;
-
-    color:#555;
-}
-
-.detail i{
-    color:#148043;
-    font-size:13px;
-}
-
 .product-bottom{
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
-
 .price{
-    font-size:24px;
+    font-size:22px;
     font-weight:700;
     color:#148043;
 }
-
 .cart-btn{
-    width:54px;
-    height:54px;
-
+    width:52px;
+    height:52px;
     border:none;
-
     border-radius:16px;
-
     background:#148043;
-
     color:#fff;
-
-    font-size:18px;
-
+    font-size:17px;
     cursor:pointer;
-
     transition:0.3s ease;
 }
-
 .cart-btn:hover{
-    transform:scale(1.06);
-    background:#0e6635;
+    background:#0d6635;
+    transform:scale(1.05);
 }
-
 /* CTA */
-
 .cta{
-    margin:0 7% 110px;
-
-    padding:80px 30px;
-
-    border-radius:32px;
-
+    margin:0 6% 90px;
+    padding:70px 30px;
+    border-radius:30px;
     border:1px solid #ececec;
-
     text-align:center;
 }
-
 .cta h2{
-    font-size:54px;
-
+    font-size:50px;
+    margin-bottom:16px;
     font-family:'Cormorant Garamond',serif;
-
-    margin-bottom:18px;
 }
-
 .cta p{
     max-width:700px;
-
     margin:auto;
-
     color:#666;
-
     line-height:1.9;
-
-    margin-bottom:34px;
+    margin-bottom:30px;
 }
-
 /* FOOTER */
-
 footer{
-    padding:36px 7%;
-    text-align:center;
-
-    border-top:1px solid #f0f0f0;
-
-    color:#777;
+    border-top:1px solid #f2f2f2;
+    padding:50px 6% 30px;
 }
-
-/* SCROLL ANIMATION */
-
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:30px;
+}
+.footer-logo img{
+    width:110px;
+}
+.footer-social{
+    display:flex;
+    gap:14px;
+}
+.social-icon{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid #ececec;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#111;
+    transition:0.3s ease;
+}
+.social-icon:hover{
+    background:#148043;
+    border-color:#148043;
+    color:#fff;
+}
+.footer-bottom{
+    text-align:center;
+    color:#777;
+    font-size:14px;
+}
+/* ANIMATION */
 .reveal{
     opacity:0;
-    transform:translateY(50px);
+    transform:translateY(40px);
     transition:1s ease;
 }
-
 .reveal.active{
     opacity:1;
     transform:translateY(0);
 }
-
 /* MOBILE */
-
 @media(max-width:992px){
-
 .features{
     grid-template-columns:repeat(2,1fr);
 }
-
 .product-grid{
     grid-template-columns:repeat(2,1fr);
 }
-
 .hero h1{
     font-size:52px;
 }
-
 }
-
 @media(max-width:768px){
-
 nav{
-    padding:16px 5%;
+    padding:14px 5%;
 }
-
-.logo{
-    font-size:24px;
+.logo img{
+    width:90px;
 }
-
 .hero{
-    padding:130px 5% 80px;
+    padding:120px 5% 70px;
 }
-
 .hero h1{
-    font-size:42px;
+    font-size:40px;
 }
-
-.hero p{
-    font-size:15px;
-}
-
 .hero-buttons{
     flex-direction:column;
 }
-
 .btn{
     width:100%;
 }
-
 .features{
-    padding:10px 5% 80px;
+    padding:10px 5% 70px;
     grid-template-columns:1fr;
 }
-
 .products{
-    padding:10px 5% 90px;
+    padding:10px 5% 80px;
 }
-
 .product-grid{
     grid-template-columns:1fr;
 }
-
 .section-title h2{
+    font-size:38px;
+}
+.cta{
+    margin:0 5% 70px;
+    padding:55px 24px;
+}
+.cta h2{
     font-size:40px;
 }
-
-.cta{
-    margin:0 5% 80px;
-    padding:60px 24px;
+.footer-top{
+    flex-direction:column;
 }
-
-.cta h2{
-    font-size:42px;
 }
-
-}
-
 </style>
 </head>
-
 <body>
-
 <!-- LOADER -->
-
 <div class="loader">
     <div class="loader-circle"></div>
 </div>
-
 <!-- NAVBAR -->
-
 <nav>
-
-<div class="logo">
-MUSQ
-</div>
-
-<div class="nav-icons">
-
+<div class="nav-left">
 <button class="icon-btn">
 <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-
+</div>
+<div class="logo">
+<img src="images/logo.png" alt="">
+</div>
+<div class="nav-right">
 <button class="icon-btn">
 <i class="fa-regular fa-heart"></i>
 </button>
-
 <button class="icon-btn">
 <i class="fa-solid fa-bag-shopping"></i>
 </button>
-
 <button class="icon-btn">
 <i class="fa-regular fa-user"></i>
 </button>
-
 </div>
-
 </nav>
-
 <!-- HERO -->
-
 <section class="hero reveal">
-
 <div class="hero-content">
-
 <div class="tag">
 Luxury B2B Perfume Supplier
 </div>
-
 <h1>
 Modern Luxury Fragrance Experience
 </h1>
-
 <p>
 MUSQ WORLD PERFUMES delivers premium fragrance collections,
 private labeling solutions, and global wholesale perfume supply
 for modern luxury businesses.
 </p>
-
 <div class="hero-buttons">
-
 <button class="btn btn-green">
 Become Partner
 </button>
-
 <button class="btn btn-light">
 Explore Collection
 </button>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- FEATURES -->
-
 <section class="features">
-
 <div class="feature-card reveal">
-
 <div class="feature-icon">
 <i class="fa-solid fa-crown"></i>
 </div>
-
 <h3>Premium Quality</h3>
-
 <p>
-Luxury crafted perfumes made with premium long-lasting fragrance oils.
+Luxury crafted perfumes with premium long-lasting fragrance oils.
 </p>
-
 </div>
-
 <div class="feature-card reveal">
-
 <div class="feature-icon">
 <i class="fa-solid fa-boxes-stacked"></i>
 </div>
-
 <h3>Bulk Orders</h3>
-
 <p>
 Flexible wholesale ordering solutions for modern perfume businesses.
 </p>
-
 </div>
-
 <div class="feature-card reveal">
-
 <div class="feature-icon">
 <i class="fa-solid fa-earth-americas"></i>
 </div>
-
 <h3>Global Shipping</h3>
-
 <p>
-Worldwide shipping with premium packaging and secure logistics.
+Worldwide shipping with secure premium logistics support.
 </p>
-
 </div>
-
 <div class="feature-card reveal">
-
 <div class="feature-icon">
 <i class="fa-solid fa-gem"></i>
 </div>
-
 <h3>Private Label</h3>
-
 <p>
 Build your own luxury perfume brand with MUSQ private labeling.
 </p>
-
 </div>
-
 </section>
-
 <!-- PRODUCTS -->
-
 <section class="products">
-
 <div class="section-title reveal">
-
 <h2>
 Luxury Collection
 </h2>
-
 <p>
-Premium fragrance collection for global modern perfume markets.
+Premium fragrance collection for modern global perfume markets.
 </p>
-
 </div>
-
 <div class="product-grid">
-
 <!-- PRODUCT -->
-
 <div class="product-card reveal">
-
 <div class="product-image">
-
 <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop">
-
 </div>
-
 <div class="product-content">
-
 <div class="product-top">
-
 <div class="badge">
 Luxury Edition
 </div>
-
 <div class="wishlist">
 <i class="fa-regular fa-heart"></i>
 </div>
-
 </div>
-
 <h3>
 Royal Oud
 </h3>
-
 <p>
 Elegant oriental fragrance with premium woody and oud notes.
 </p>
-
-<div class="product-details">
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Premium Quality
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Bulk Order
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Global Shipping
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Private Label
-</div>
-
-</div>
-
 <div class="product-bottom">
-
 <div class="price">
 $120
 </div>
-
 <button class="cart-btn">
 <i class="fa-solid fa-bag-shopping"></i>
 </button>
-
 </div>
-
 </div>
-
 </div>
-
 <!-- PRODUCT -->
-
 <div class="product-card reveal">
-
 <div class="product-image">
-
 <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1200&auto=format&fit=crop">
-
 </div>
-
 <div class="product-content">
-
 <div class="product-top">
-
 <div class="badge">
 Signature
 </div>
-
 <div class="wishlist">
 <i class="fa-regular fa-heart"></i>
 </div>
-
 </div>
-
 <h3>
 Golden Essence
 </h3>
-
 <p>
 Premium fragrance crafted for luxury perfume collections worldwide.
 </p>
-
-<div class="product-details">
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Premium Quality
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Bulk Order
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Global Shipping
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Private Label
-</div>
-
-</div>
-
 <div class="product-bottom">
-
 <div class="price">
 $150
 </div>
-
 <button class="cart-btn">
 <i class="fa-solid fa-bag-shopping"></i>
 </button>
-
 </div>
-
 </div>
-
 </div>
-
 <!-- PRODUCT -->
-
 <div class="product-card reveal">
-
 <div class="product-image">
-
 <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop">
-
 </div>
-
 <div class="product-content">
-
 <div class="product-top">
-
 <div class="badge">
 Exclusive
 </div>
-
 <div class="wishlist">
 <i class="fa-regular fa-heart"></i>
 </div>
-
 </div>
-
 <h3>
 Midnight Musk
 </h3>
-
 <p>
 Bold musky fragrance with elegant modern aromatic layers.
 </p>
-
-<div class="product-details">
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Premium Quality
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Bulk Order
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Global Shipping
-</div>
-
-<div class="detail">
-<i class="fa-solid fa-circle-check"></i>
-Private Label
-</div>
-
-</div>
-
 <div class="product-bottom">
-
 <div class="price">
 $180
 </div>
-
 <button class="cart-btn">
 <i class="fa-solid fa-bag-shopping"></i>
 </button>
-
 </div>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
 <!-- CTA -->
-
 <section class="cta reveal">
-
 <h2>
 Build Your Perfume Brand
 </h2>
-
 <p>
 Partner with MUSQ WORLD PERFUMES and access premium fragrances,
 luxury packaging, and worldwide wholesale opportunities.
 </p>
-
 <button class="btn btn-green">
 Start Business Today
 </button>
-
 </section>
-
 <!-- FOOTER -->
-
 <footer>
-
+<div class="footer-top">
+<div class="footer-logo">
+<img src="images/logo.png" alt="">
+</div>
+<div class="footer-social">
+<a href="#" class="social-icon">
+<i class="fa-brands fa-instagram"></i>
+</a>
+<a href="#" class="social-icon">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+<a href="#" class="social-icon">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+<a href="#" class="social-icon">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
+</div>
+</div>
+<div class="footer-bottom">
 © 2026 MUSQ WORLD PERFUMES — ALL RIGHTS RESERVED
-
+</div>
 </footer>
-
 <!-- JAVASCRIPT -->
-
 <script>
-
 /* LOADER */
-
 window.addEventListener("load", () => {
-
 document.querySelector(".loader")
 .classList.add("hide");
-
 });
-
-/* SCROLL ANIMATION */
-
+/* SCROLL REVEAL */
 const reveals = document.querySelectorAll(".reveal");
-
 window.addEventListener("scroll", () => {
-
 reveals.forEach((element) => {
-
 const windowHeight = window.innerHeight;
-
 const revealTop =
 element.getBoundingClientRect().top;
-
 const revealPoint = 100;
-
 if(revealTop < windowHeight - revealPoint){
-
 element.classList.add("active");
-
 }
-
 });
-
 });
-
 </script>
-
 </body>
 </html>
