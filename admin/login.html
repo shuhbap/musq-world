@@ -1,1 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUSQ ERP - Login</title>
 
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#050505;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+      position:relative;
+      color:white;
+    }
+
+    /* BACKGROUND GLOW */
+
+    .glow{
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:#148043;
+      filter:blur(180px);
+      opacity:0.18;
+      border-radius:50%;
+      z-index:0;
+    }
+
+    .glow.one{
+      top:-120px;
+      left:-100px;
+    }
+
+    .glow.two{
+      bottom:-120px;
+      right:-100px;
+    }
+
+    /* LOGIN BOX */
+
+    .login-container{
+      width:100%;
+      max-width:420px;
+      padding:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .login-box{
+      background:rgba(16,16,16,0.92);
+      border:1px solid rgba(255,255,255,0.06);
+      backdrop-filter:blur(18px);
+      border-radius:28px;
+      padding:40px 30px;
+      box-shadow:0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    /* LOGO */
+
+    .logo{
+      text-align:center;
+      margin-bottom:35px;
+    }
+
+    .logo h1{
+      font-size:38px;
+      color:#148043;
+      letter-spacing:3px;
+      margin-bottom:10px;
+    }
+
+    .logo p{
+      color:#9a9a9a;
+      font-size:14px;
+    }
+
+    /* INPUTS */
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:10px;
+      color:#bcbcbc;
+      font-size:14px;
+    }
+
+    .input-group input{
+      width:100%;
+      padding:16px;
+      border:none;
+      outline:none;
+      background:#151515;
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:16px;
+      color:white;
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    .input-group input:focus{
+      border-color:#148043;
+      box-shadow:0 0 0 4px rgba(20,128,67,0.12);
+    }
+
+    /* LOGIN BUTTON */
+
+    .login-btn{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:16px;
+      background:#148043;
+      color:white;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      margin-top:10px;
+    }
+
+    .login-btn:hover{
+      transform:translateY(-2px);
+      opacity:0.92;
+    }
+
+    /* FOOTER */
+
+    .footer-text{
+      text-align:center;
+      margin-top:22px;
+      color:#777;
+      font-size:13px;
+    }
+
+    /* DEMO INFO */
+
+    .demo-box{
+      margin-top:25px;
+      background:#151515;
+      border:1px solid rgba(255,255,255,0.05);
+      padding:18px;
+      border-radius:18px;
+    }
+
+    .demo-box h3{
+      color:#148043;
+      margin-bottom:12px;
+      font-size:15px;
+    }
+
+    .demo-box p{
+      color:#bcbcbc;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:500px){
+
+      .login-box{
+        padding:32px 22px;
+      }
+
+      .logo h1{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- GLOW EFFECT -->
+
+  <div class="glow one"></div>
+  <div class="glow two"></div>
+
+  <!-- LOGIN -->
+
+  <div class="login-container">
+
+    <div class="login-box">
+
+      <!-- LOGO -->
+
+      <div class="logo">
+        <h1>MUSQ ERP</h1>
+        <p>Luxury Business Management System</p>
+      </div>
+
+      <!-- FORM -->
+
+      <form onsubmit="login(event)">
+
+        <div class="input-group">
+          <label>Email Address</label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="admin@musqworld.com"
+            required
+          >
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          >
+        </div>
+
+        <button class="login-btn">
+          Login to Dashboard
+        </button>
+
+      </form>
+
+      <!-- DEMO -->
+
+      <div class="demo-box">
+
+        <h3>Demo Login</h3>
+
+        <p>
+          Email: admin@musq.com
+          <br><br>
+          Password: musq123
+        </p>
+
+      </div>
+
+      <!-- FOOTER -->
+
+      <div class="footer-text">
+        © 2026 MUSQ WORLD PERFUMES
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    function login(event){
+
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if(
+        email === "admin@musq.com" &&
+        password === "musq123"
+      ){
+
+        alert("Login Successful");
+
+        window.location.href = "dashboard.html";
+
+      }else{
+
+        alert("Invalid Email or Password");
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
