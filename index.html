@@ -1,38 +1,485 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>MUSQ World Perfumes</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MUSQ World Perfumes</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0b0b0b;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+nav{
+  width:100%;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(14px);
+  background:rgba(0,0,0,0.45);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:3px;
+  color:#d4af37;
+}
+
+nav .menu{
+  display:flex;
+  gap:22px;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  transition:0.3s ease;
+  position:relative;
+}
+
+nav a:hover{
+  color:#d4af37;
+}
+
+.hero{
+  min-height:100vh;
+  padding:140px 7% 80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+  linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.8)),
+  url('https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1400&auto=format&fit=crop') center/cover;
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.tag{
+  display:inline-block;
+  padding:10px 18px;
+  background:rgba(212,175,55,0.15);
+  border:1px solid rgba(212,175,55,0.4);
+  border-radius:50px;
+  color:#d4af37;
+  margin-bottom:25px;
+  font-size:14px;
+}
+
+.hero h1{
+  font-size:58px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero p{
+  color:#d7d7d7;
+  line-height:1.8;
+  margin-bottom:30px;
+  font-size:16px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 28px;
+  border:none;
+  border-radius:60px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s ease;
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,#d4af37,#f7d774);
+  color:#000;
+  box-shadow:0 10px 30px rgba(212,175,55,0.25);
+}
+
+.btn-dark{
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.btn:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#bdbdbd;
+}
+
+.features{
+  padding:90px 7%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.feature-card{
+  background:#131313;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:25px;
+  padding:35px 25px;
+  transition:0.4s ease;
+  text-align:center;
+}
+
+.feature-card:hover{
+  transform:translateY(-10px);
+  border-color:#d4af37;
+}
+
+.feature-card h3{
+  margin-top:18px;
+  margin-bottom:10px;
+  color:#d4af37;
+}
+
+.feature-card p{
+  color:#bdbdbd;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.products{
+  padding:20px 7% 100px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.product-card{
+  background:#121212;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.06);
+  transition:0.4s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-10px);
+  border-color:#d4af37;
+}
+
+.product-image{
+  height:340px;
+  overflow:hidden;
+}
+
+.product-image img{
+  height:100%;
+  object-fit:cover;
+  transition:0.5s ease;
+}
+
+.product-card:hover img{
+  transform:scale(1.08);
+}
+
+.product-content{
+  padding:25px;
+}
+
+.product-content h3{
+  margin-bottom:12px;
+  font-size:22px;
+}
+
+.product-content p{
+  color:#bdbdbd;
+  line-height:1.7;
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+.product-btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(135deg,#d4af37,#f5cf63);
+  font-weight:600;
+  cursor:pointer;
+}
+
+.cta{
+  margin:0 7% 100px;
+  padding:70px 40px;
+  border-radius:35px;
+  text-align:center;
+  background:
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+  url('https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1400&auto=format&fit=crop') center/cover;
+}
+
+.cta h2{
+  font-size:42px;
+  margin-bottom:18px;
+}
+
+.cta p{
+  max-width:650px;
+  margin:auto;
+  color:#d0d0d0;
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+footer{
+  padding:35px 7%;
+  border-top:1px solid rgba(255,255,255,0.08);
+  text-align:center;
+  color:#aaa;
+}
+
+@media(max-width:992px){
+
+.hero h1{
+  font-size:44px;
+}
+
+.features{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.product-grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+  padding:16px 5%;
+}
+
+nav .menu{
+  gap:14px;
+}
+
+nav a{
+  font-size:13px;
+}
+
+.hero{
+  padding:130px 5% 80px;
+}
+
+.hero h1{
+  font-size:36px;
+}
+
+.hero p{
+  font-size:15px;
+}
+
+.features{
+  padding:70px 5%;
+  grid-template-columns:1fr;
+}
+
+.products{
+  padding:10px 5% 80px;
+}
+
+.product-grid{
+  grid-template-columns:1fr;
+}
+
+.cta{
+  margin:0 5% 70px;
+  padding:55px 25px;
+}
+
+.cta h2{
+  font-size:32px;
+}
+
+.hero-buttons{
+  flex-direction:column;
+}
+
+.btn{
+  width:100%;
+}
+
+}
+</style>
 </head>
+
 <body>
+
 <nav>
-  <h1>MUSQ</h1>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="catalog.html">Catalog</a>
-    <a href="wholesale.html">Wholesale</a>
-    <a href="contact.html">Contact</a>
+  <div class="logo">MUSQ</div>
+
+  <div class="menu">
+    <a href="#">Home</a>
+    <a href="#">Catalog</a>
+    <a href="#">Wholesale</a>
+    <a href="#">Contact</a>
   </div>
 </nav>
 
 <section class="hero">
-  <div>
-    <p class="tag">Luxury B2B Perfume Supplier</p>
-    <h2>Premium Fragrances For Global Business</h2>
-    <p>Partner with MUSQ WORLD PERFUMES and grow your business.</p>
-    <button>Become Partner</button>
+  <div class="hero-content">
+
+    <span class="tag">Luxury B2B Perfume Supplier</span>
+
+    <h1>Premium Fragrances For Global Business</h1>
+
+    <p>
+      MUSQ WORLD PERFUMES delivers premium luxury fragrances with international quality,
+      private labeling, wholesale supply, and worldwide shipping for modern perfume businesses.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn btn-gold">Become Partner</button>
+      <button class="btn btn-dark">Explore Collection</button>
+    </div>
+
   </div>
 </section>
 
 <section class="features">
-  <div class="card">Premium Quality</div>
-  <div class="card">Bulk Orders</div>
-  <div class="card">Worldwide Shipping</div>
-  <div class="card">Private Label</div>
+
+  <div class="feature-card">
+    <h3>Premium Quality</h3>
+    <p>Luxury crafted perfumes made with long-lasting premium fragrance oils.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Bulk Orders</h3>
+    <p>Wholesale pricing and scalable perfume supply for growing businesses.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Worldwide Shipping</h3>
+    <p>Fast and secure delivery services available across multiple countries.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>Private Label</h3>
+    <p>Create your own perfume brand with MUSQ private labeling solutions.</p>
+  </div>
+
+</section>
+
+<section class="products">
+
+  <div class="section-title">
+    <h2>Luxury Collections</h2>
+    <p>Exclusive premium fragrance collections for global markets.</p>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop" alt="Perfume">
+      </div>
+
+      <div class="product-content">
+        <h3>Royal Oud</h3>
+        <p>Deep oriental fragrance with luxurious oud and woody notes.</p>
+        <button class="product-btn">View Product</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1200&auto=format&fit=crop" alt="Perfume">
+      </div>
+
+      <div class="product-content">
+        <h3>Golden Essence</h3>
+        <p>Elegant luxury perfume crafted for premium global perfume brands.</p>
+        <button class="product-btn">View Product</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop" alt="Perfume">
+      </div>
+
+      <div class="product-content">
+        <h3>Midnight Musk</h3>
+        <p>Bold modern fragrance with rich musky and fresh aromatic layers.</p>
+        <button class="product-btn">View Product</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+
+  <h2>Build Your Perfume Brand With MUSQ</h2>
+
+  <p>
+    Join hands with MUSQ WORLD PERFUMES and access luxury fragrances,
+    premium packaging, bulk ordering, and global wholesale opportunities.
+  </p>
+
+  <button class="btn btn-gold">Start Business Today</button>
+
 </section>
 
 <footer>
-  <p>© 2026 MUSQ WORLD PERFUMES</p>
+  <p>© 2026 MUSQ WORLD PERFUMES — All Rights Reserved</p>
 </footer>
+
 </body>
-</html>
+  </html>
